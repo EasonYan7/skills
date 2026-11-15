@@ -1,11 +1,12 @@
 # skills
 
-个人收集的 Claude Code / Agent skills。单个 skill 直接放在 `skills/` 下；同一来源、互相依赖的一套 skills 放在一个子目录里（如 `skills/hyperframes/`）。
+个人制作和收集的 Codex、Claude Code 与其他 Agent Skills。单个 skill 直接放在 `skills/` 下；同一来源、互相依赖的一套 skills 放在一个子目录里（如 `skills/hyperframes/`）。
 
 ## 单个 skill
 
 | Skill | 用途 | 来源 | License |
 |---|---|---|---|
+| [aipay-web-design](skills/aipay-web-design) | 给自己的产品或简历做官网。附带可运行的网页示例，包含首屏、导航、滚动换场、立体卡片和页脚。 | 独立实现，参考 [支付宝 AI 付官网](https://aipay.alipay.com/) | 未声明 |
 | [hand-drawn-canvas-animation](skills/hand-drawn-canvas-animation) | 用 JavaScript + Canvas 2D 制作“手绘感”短片：铅笔/墨水/丝网印刷/涂鸦叠照片等画风，支持逐帧姿态动画、真实动作描摹（转描）、沙画和立体纸艺；输出可播放的 HTML 影片和离线 MP4。适合手绘动画、动画讲解视频、程序化短片。不适合做 UI 动效或幻灯片。 | [alesha-pro/tools](https://github.com/alesha-pro/tools/tree/main/skills/hand-drawn-canvas-animation) @ `dc0083c` | MIT |
 
 ## HyperFrames（`skills/hyperframes/`）

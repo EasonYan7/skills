@@ -1,0 +1,73 @@
+/*
+ * 支付宝 AI 付官网参考值。出处见 source.md。
+ * 使用方式：把局部变量映射到项目令牌，或将 aipay-inspired
+ * 加到待设计区域。变量只提供参数，组件负责消费。
+ * 色值、字号和尺寸来自页面计算样式。变量名称是供复用的语义映射。
+ */
+.aipay-inspired {
+  --aipay-font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --aipay-surface: #ffffff;
+  --aipay-ink: #0c0c0c;
+  --aipay-text-secondary: #5f5f5f;
+  --aipay-copy-muted: #707070;
+  --aipay-outline: #dfdfdf;
+
+  --aipay-action-fill: #0c0c0c;
+  --aipay-action-on-fill: #ffffff;
+  --aipay-action-outline-ink: #111111;
+  --aipay-action-height: 44px;
+  --aipay-action-font: 600 16px/24px var(--aipay-font-sans);
+  --aipay-action-gap: 12px;
+  --aipay-action-radius: 99px;
+  --aipay-badge-radius: 999px;
+
+  --aipay-hero-font: 620 clamp(24px, 3.4vw, 48px)/1.3 var(--aipay-font-sans);
+  --aipay-hero-lead-font: 400 18px/1.7 var(--aipay-font-sans);
+  --aipay-section-title-font: 620 36px/1.25 var(--aipay-font-sans);
+  --aipay-product-name-font: 650 48px/1.15 var(--aipay-font-sans);
+  --aipay-product-tagline-font: 550 24px/1.45 var(--aipay-font-sans);
+  --aipay-product-copy-font: 400 15px/1.85 var(--aipay-font-sans);
+
+  /* 1440px 实测。从项目内容宽度推导中间档的边距。 */
+  --aipay-wide-gutter: 72px;
+  --aipay-story-column-gap: 72px;
+  --aipay-story-visual-ratio: 3 / 4;
+  --aipay-story-visual-radius: 24px;
+  --aipay-story-sticky-inset: clamp(120px, 16svh, 180px);
+  --aipay-nav-height: 72px;
+  --aipay-desktop-nav-tray-height: 40px;
+  --aipay-desktop-menu-radius: 20px;
+
+  /* 官方深色快速对比表。暗色作用域中映射到项目的表格语义。 */
+  --aipay-compare-surface: #000000;
+  --aipay-compare-head: #202020;
+  --aipay-compare-head-ink: #929292;
+  --aipay-compare-copy: #b6b6b6;
+  --aipay-compare-title: #ffffff;
+  --aipay-compare-cell-padding: 20px 16px;
+  --aipay-compare-cell-font: 400 14px/1.7 var(--aipay-font-sans);
+}
+
+@media (max-width: 760px) {
+  .aipay-inspired {
+    --aipay-narrow-gutter: 20px;
+    --aipay-nav-height: 58px;
+    --aipay-mobile-menu-gutter: 16px;
+    --aipay-mobile-menu-radius: 18px;
+    --aipay-story-column-gap: 32px;
+    --aipay-story-chapter-gap: 24px;
+    --aipay-compare-gutter: 16px;
+    --aipay-compare-card-gap: 12px;
+    --aipay-compare-card-width: min(84%, 320px);
+    --aipay-compare-card-radius: 16px;
+    --aipay-compare-card-padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aipay-inspired {
+    --aipay-hero-font: 620 clamp(36px, 10vw, 50px)/1.3 var(--aipay-font-sans);
+    --aipay-hero-lead-font: 400 14px/1.7 var(--aipay-font-sans);
+  }
+}

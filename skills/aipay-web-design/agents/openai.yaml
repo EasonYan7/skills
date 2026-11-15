@@ -1,0 +1,4 @@
+interface:
+  display_name: "支付宝 AI 付网页设计参考"
+  short_description: "复用支付宝 AI 付官网的组件模板、滚动动效和响应式预览"
+  default_prompt: "用 $aipay-web-design 的组件模板为我的开发者产品实现响应式官网，并验证桌面和手机预览。"

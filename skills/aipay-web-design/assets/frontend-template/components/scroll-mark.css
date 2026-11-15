@@ -1,0 +1,105 @@
+.aw-scroll-mark-dock {
+  display: inline-block;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 27px;
+}
+
+.aw-scroll-mark {
+  position: fixed;
+  z-index: 31;
+  inset: 0 auto auto 0;
+  width: 56px;
+  height: 52px;
+  pointer-events: none;
+  user-select: none;
+  --mark-fill: #111114;
+  --mark-rim: #29292b;
+  --mark-glyph: #fff;
+}
+
+.aw-scroll-mark[data-dark] {
+  --mark-fill: #161618;
+  --mark-rim: #ececf1;
+}
+.aw-scroll-mark-trigger {
+  position: fixed;
+  z-index: 32;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+}
+.aw-scroll-mark[data-phase="screen"] { --mark-fill: #c3c8c2; --mark-rim: #e1e5df; --mark-glyph: #1d2320; }
+.aw-scroll-mark[data-phase="screen"] .aw-scroll-mark__pose {
+  clip-path: polygon(10% 8%, 96% 8%, 96% 71%, 55% 71%, 55% 88%, 31% 88%, 31% 71%, 7% 71%);
+  filter: none;
+}
+
+.aw-scroll-mark__pose {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 3px 4px #0d0d1316);
+}
+.aw-scroll-mark__trail {
+  position: absolute;
+  inset: calc(50% - 16px) 50% auto auto;
+  width: 106px;
+  height: 32px;
+  transform: rotate(var(--mark-trail-angle, 0deg)) scaleX(var(--mark-trail, 0));
+  transform-origin: right center;
+  background: radial-gradient(circle, var(--mark-rim) 0 1px, transparent 1.6px) 0 0 / 5px 5px;
+  mask-image: linear-gradient(to right, transparent 5%, #000 76%);
+  clip-path: polygon(0 47%, 100% 0, 100% 100%, 0 53%);
+  opacity: 0;
+}
+.aw-scroll-mark[data-phase="flight"] .aw-scroll-mark__trail { opacity: .83; }
+
+.aw-scroll-mark:is([data-phase="origin"], [data-phase="closing"]) .aw-scroll-mark__pose {
+  animation: aw-scroll-mark-idle 4.4s ease-in-out infinite;
+}
+
+.aw-scroll-mark__body {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: var(--mark-fill);
+  stroke: var(--mark-rim);
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  transition: fill .22s ease, stroke .22s ease;
+}
+
+.aw-scroll-mark .aw-scroll-mark__glyph {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  width: 25px;
+  height: 24px;
+  color: var(--mark-glyph);
+  transform-origin: 50% 50%;
+  animation: aw-scroll-mark-blink 6s ease-in-out infinite;
+}
+
+@keyframes aw-scroll-mark-idle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes aw-scroll-mark-blink {
+  0%, 41%, 45%, 100% { transform: scaleY(1); }
+  43% { transform: scaleY(.18); }
+}
+
+@media (max-width: 980px) {
+  .aw-scroll-mark-dock, .aw-scroll-mark { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aw-scroll-mark:is([data-phase="origin"], [data-phase="closing"]) .aw-scroll-mark__pose,
+  .aw-scroll-mark .aw-scroll-mark__glyph { animation: none; }
+  .aw-scroll-mark__body { transition: none; }
+}

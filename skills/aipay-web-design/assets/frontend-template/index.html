@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="北屿云作：云端任务、产品比较与开发者工具的组件示例">
+  <title>北屿云作 · 云端任务场景演示</title>
+  <link rel="stylesheet" href="./shared.css">
+  <link rel="stylesheet" href="./components/navigation.css">
+  <link rel="stylesheet" href="./components/hero.css">
+  <link rel="stylesheet" href="./components/story.css">
+  <link rel="stylesheet" href="./components/comparison.css">
+  <link rel="stylesheet" href="./components/developer-tools.css">
+  <link rel="stylesheet" href="./components/scroll-mark.css">
+  <link rel="stylesheet" href="./components/home-motion.css">
+  <link rel="stylesheet" href="./components/closing.css">
+  <link rel="stylesheet" href="./demo.css?v=4">
+  <script type="module" src="./demo.js?v=4"></script>
+</head>
+<body class="aw-theme" id="home">
+  <a class="demo-skip" href="#main">跳到主要内容</a>
+  <div id="navigation"></div>
+  <main id="main" tabindex="-1">
+    <div id="hero"></div>
+    <div id="motion-proof" class="aw-proof"></div>
+    <div class="demo-product-transition">
+      <div id="solutions"></div>
+      <div id="motion-handoff"></div>
+    </div>
+    <div id="platform">
+      <div id="comparison"></div>
+      <div id="developers"></div>
+    </div>
+    <section class="demo-guide aw-wrap" id="guide" tabindex="-1" aria-labelledby="guide-title">
+      <p class="demo-guide__eyebrow">快速上手 · 示例数据</p>
+      <h2 id="guide-title">从一个最小任务开始</h2>
+      <p>选一种触发方式，核对一次执行会返回哪些信息。以下是教学示例，没有可调用的线上服务。</p>
+      <div class="demo-guide__cards">
+        <article id="api-example" tabindex="-1">
+          <h3>即时运行 · 请求</h3>
+          <p>提交转换任务，保存返回的运行编号。</p>
+          <pre><code>{
+  "task": "convert-pdf",
+  "input": "daily-report.md"
+}</code></pre>
+        </article>
+        <article id="schedule-example" tabindex="-1">
+          <h3>定时任务 · 计划</h3>
+          <p>定义时区，以及每个工作日的执行时间。</p>
+          <pre><code>{
+  "cron": "0 9 * * 1-5",
+  "timezone": "Asia/Shanghai"
+}</code></pre>
+        </article>
+        <article id="workflow-example" tabindex="-1">
+          <h3>事件编排 · 触发</h3>
+          <p>用发布事件触发产物校验流程。</p>
+          <pre><code>{
+  "event": "release.created",
+  "workflow": "verify-release"
+}</code></pre>
+        </article>
+      </div>
+    </section>
+    <div id="reliability"></div>
+    <div id="closing"></div>
+  </main>
+  <footer class="demo-footer-case">
+    <div class="demo-footer__navigation aw-wrap">
+      <div class="demo-footer__brand">
+        <a href="#home">北屿云作</a>
+        <p>用同一套入口，执行即时、定时和事件任务。</p>
+      </div>
+      <nav aria-label="场景" id="footer-products"></nav>
+      <nav aria-label="开发者">
+        <h2>开发者</h2>
+        <a href="#developers">开发者工具</a>
+        <a href="#guide">快速开始</a>
+        <a href="#reliability">执行与追踪</a>
+      </nav>
+    </div>
+    <div class="aw-wrap demo-footer__base">
+      <div id="footer-board"></div>
+      <div class="demo-footer">
+        <span>北屿云作 · 组件演示</span>
+        <a href="#home">返回顶部 ↑</a>
+      </div>
+    </div>
+  </footer>
+  <div id="scroll-mark"></div>
+  <div id="motion-dock"></div>
+  <div id="support"></div>
+  <noscript><p>该模板需要 JavaScript 来挂载组件。</p></noscript>
+</body>
+</html>
